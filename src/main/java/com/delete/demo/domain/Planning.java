@@ -1,20 +1,21 @@
 package com.delete.demo.domain;
 
-import java.util.Date;
+import com.delete.demo.tools.Timetool;
+
 import java.util.List;
 
 //计划类
 public class Planning {
     private String name;
     private List<Planning> plannings;
-    private Date startTime;
-    private Date endTime;
-    private Date deadline;
+    private String startTime;
+    private String endTime;
+    private String deadline;
     private boolean ifend;
 
     //结束计划与误触
     public void endThePlanning() {
-        endTime = new Date();
+        endTime = Timetool.nowTime();
         ifend = true;
     }
     public void restartPlanning(){
@@ -25,7 +26,7 @@ public class Planning {
     //构造方法
     public Planning(String name) {
         this.name = name;
-        this.startTime = new Date();
+        this.startTime = Timetool.nowTime();
         ifend = false;
     }
 
@@ -50,13 +51,13 @@ public class Planning {
     public String getName() {
         return name;
     };
-    public Date getStartTime(){
+    public String getStartTime(){
         return startTime;
     }
-    public Date getEndTime(){
+    public String getEndTime(){
         return endTime;
     }
-    public Date getDeadline(){
+    public String getDeadline(){
         return deadline;
     }
 }

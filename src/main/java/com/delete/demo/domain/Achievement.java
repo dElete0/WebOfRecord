@@ -1,16 +1,18 @@
 package com.delete.demo.domain;
 
+import com.delete.demo.tools.Timetool;
+
 import java.util.Date;
 
 //已完成成就
 public class Achievement {
-    private Date startTime;
-    private Date endTime;
+    private String startTime;
+    private String endTime;
     private String name;
 
     //构造方法们
     public Achievement(String name) {
-        this.endTime = new Date();
+        endTime = Timetool.nowTime();
         this.name = name;
     }
     public Achievement(Planning planning) {
@@ -23,10 +25,10 @@ public class Achievement {
     public String getName(){
         return name;
     }
-    public Date getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
-    public Date getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 }

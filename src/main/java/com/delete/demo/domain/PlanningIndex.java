@@ -9,6 +9,7 @@ public class PlanningIndex {
     private String name;
     private List<Planning> plannings;
 
+    //构造方法
     public PlanningIndex(String name) {
         this.name = name;
     }
